@@ -1,7 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\employeeController;
+use App\Http\Controllers\AttendanceController;
+use App\Http\Controllers\LeaveController;
+use App\Http\Controllers\ProjectsController;
+use App\Http\Controllers\SalaryController;
+use App\Http\Controllers\EmployeecreateController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,7 +18,21 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/',function(){
+    return view('backend.welcome');
 });
+
+
+
+
+//backend
+
+ Route::get('/dashboards',[DashboardController::class,'dashboards']);
+ Route::get('/employee',[employeeController::class,'employee']);
+ Route::get('/attendance',[AttendanceController::class,'attendance']);
+ Route::get('/leave',[leaveController::class,'leave']);
+ Route::get('/projects',[ProjectsController::class,'projects']);
+ Route::get('/salary',[SalaryController::class,'salary']);
+ Route::get('/employeecreate',[EmployeecreateController::class,'employeecreate']);
+
+
