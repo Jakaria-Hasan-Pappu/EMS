@@ -8,6 +8,8 @@ use App\Http\Controllers\LeaveController;
 use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\SalaryController;
 use App\Http\Controllers\EmployeecreateController;
+use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\DesignationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,5 +36,11 @@ Route::get('/',function(){
  Route::get('/projects',[ProjectsController::class,'projects']);
  Route::get('/salary',[SalaryController::class,'salary']);
  Route::get('/employeecreate',[EmployeecreateController::class,'employeecreate']);
+ Route::post('/emc',[EmployeecreateController::class,'emc']);
+ Route::get('/department',[DepartmentController::class,'department']);
+ Route::post('/dpt',[DepartmentController::class,'dpt']);
+ Route::get('/designation',[DesignationController::class,'designation']);
+ Route::post('/dsg',[DesignationController::class,'dsg']);
+
 
 

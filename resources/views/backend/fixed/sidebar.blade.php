@@ -50,6 +50,20 @@
     </a>
   </li>
 
+  <li class="nav-item">
+    <a class="nav-link " href="{{url('/department')}}">
+      <i class="bi bi-grid"></i>
+      <span>Department</span>
+    </a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link " href="{{url('/designation')}}">
+      <i class="bi bi-grid"></i>
+      <span>Designation</span>
+    </a>
+  </li>
+
 </ul>
 
 

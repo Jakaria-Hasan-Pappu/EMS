@@ -4,7 +4,8 @@
 
 
 <h1>Add Employee</h1>
-<form>
+<form action="/emc" target="_blank" method="post">
+  @csrf
   
   <div class="form-group">
     <label for="exampleInputEmail1">Name</label>
@@ -20,7 +21,7 @@
     <label for="exampleInputPassword1">Password</label>
     <input type="password" class="form-control" id="exampleInputPassword1"name="password" placeholder="Password">
   </div>
-  
+
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
