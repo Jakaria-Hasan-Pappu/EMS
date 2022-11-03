@@ -32,14 +32,16 @@ Route::get('/',function(){
 
  Route::get('/dashboards',[DashboardController::class,'dashboards']);
  Route::get('/employee',[employeeController::class,'employee']);
+ Route::get('/employeecreate',[employeeController::class,'employeecreate'])->name('employee.create');
+ Route::post('/emc',[employeeController::class,'emc'])->name('emc.create');
  Route::get('/attendance',[AttendanceController::class,'attendance']);
  Route::get('/leave',[leaveController::class,'leave']);
  Route::get('/projects',[ProjectsController::class,'projects']);
  Route::get('/salary',[SalaryController::class,'salary']);
- Route::get('/employeecreate',[EmployeecreateController::class,'employeecreate']);
- Route::post('/emc',[EmployeecreateController::class,'emc']);
  Route::get('/department',[DepartmentController::class,'department']);
- Route::post('/dpt',[DepartmentController::class,'dpt']);
+ Route::get('/departmentcreate',[DepartmentController::class,'departmentcreate'])->name('department.create');
+ Route::post('/department/form',[DepartmentController::class,'dpt'])->name('department.form');;
+
  Route::get('/designation',[DesignationController::class,'designation']);
  Route::post('/dsg',[DesignationController::class,'dsg']);
  Route::post('/leve',[leaveController::class,'leve']);

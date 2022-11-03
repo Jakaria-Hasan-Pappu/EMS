@@ -9,9 +9,13 @@ use Illuminate\Http\Request;
 class DepartmentController extends Controller
 {
     public function department(){
+      
+    return view('backend.pages.department');
+}
 
-        return view('backend.pages.department');
-    
+public function departmentcreate(){
+
+    return view('backend.pages.Departmentcreate');   
 }
 
 public function dpt(Request $request)
@@ -20,8 +24,7 @@ public function dpt(Request $request)
         Department::create([
             'name'=> $request-> name,
             'email'=> $request-> email,
-            'room'=> $request-> room,
-            
+            'room'=> $request-> room
         ]);
         return redirect()->back();
     }

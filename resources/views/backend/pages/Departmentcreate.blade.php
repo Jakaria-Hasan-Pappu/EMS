@@ -2,9 +2,8 @@
 
 @section('contents')
 
-
-<h1>Add Employee</h1>
-<form action="{{route('emc.create')}}" method="post">
+<h1>Add Department</h1>
+<form action="{{route('department.form')}}" target="_blank" method="post">
   @csrf
   
   <div class="form-group">
@@ -18,11 +17,10 @@
    
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1"name="password" placeholder="Password">
+    <label for="exampleInputRoom">RoomNo</label>
+    <input type="room" class="form-control" id="exampleInputRoom"name="room" placeholder="Password">
   </div>
 
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-
 @endsection
