@@ -10,6 +10,7 @@ use App\Http\Controllers\SalaryController;
 use App\Http\Controllers\EmployeecreateController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\DesignationController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,6 +42,8 @@ Route::get('/',function(){
  Route::post('/dpt',[DepartmentController::class,'dpt']);
  Route::get('/designation',[DesignationController::class,'designation']);
  Route::post('/dsg',[DesignationController::class,'dsg']);
+ Route::post('/leve',[leaveController::class,'leve']);
+ 
 
 
 
