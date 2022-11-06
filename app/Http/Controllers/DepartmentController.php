@@ -10,7 +10,10 @@ class DepartmentController extends Controller
 {
     public function department(){
       
-    return view('backend.pages.department');
+        $list=Department::all();
+        // dd($list);
+        return view('backend.pages.department',compact('list'));
+        
 }
 
 public function departmentcreate(){
@@ -20,7 +23,7 @@ public function departmentcreate(){
 
 public function dpt(Request $request)
     {
-        //dd($request->all());
+        // dd($request->all());
         Department::create([
             'name'=> $request-> name,
             'email'=> $request-> email,

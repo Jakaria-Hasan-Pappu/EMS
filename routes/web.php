@@ -36,6 +36,7 @@ Route::get('/',function(){
  Route::post('/emc',[employeeController::class,'emc'])->name('emc.create');
  Route::get('/attendance',[AttendanceController::class,'attendance']);
  Route::get('/leave',[leaveController::class,'leave']);
+ Route::post('/leve',[leaveController::class,'leve']);
  Route::get('/projects',[ProjectsController::class,'projects']);
  Route::get('/salary',[SalaryController::class,'salary']);
  Route::get('/department',[DepartmentController::class,'department']);
@@ -43,8 +44,10 @@ Route::get('/',function(){
  Route::post('/department/form',[DepartmentController::class,'dpt'])->name('department.form');;
 
  Route::get('/designation',[DesignationController::class,'designation']);
- Route::post('/dsg',[DesignationController::class,'dsg']);
- Route::post('/leve',[leaveController::class,'leve']);
+ Route::get('/designationcreate',[DesignationController::class,'designationcreate'])->name('designation.create');
+ Route::post('/dsg/form',[DesignationController::class,'dsg'])->name('dsg.form');
+ 
+ 
  
 
 

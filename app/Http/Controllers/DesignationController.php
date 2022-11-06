@@ -9,8 +9,14 @@ class DesignationController extends Controller
 {
     public function designation(){
 
-        return view('backend.pages.designation');
-    
+        $list=Designation::all();
+        //  dd($list);
+        return view('backend.pages.designation',compact('list'));
+        
+}
+public function designationcreate(){
+
+    return view('backend.pages.designationcreate');   
 }
 public function dsg(Request $request)
     {

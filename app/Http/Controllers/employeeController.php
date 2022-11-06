@@ -9,6 +9,7 @@ class employeeController extends Controller
 {
    public function employee(){
        $list=Employee::all();
+    //    dd($list);
     return view('backend.pages.employee',compact('list'));
     
 
@@ -20,7 +21,7 @@ class employeeController extends Controller
 
    public function emc(Request  $request)
     {
-        //dd($request->all());
+        // dd($request->all());
         Employee::create([
             'name'=> $request-> name,
             'email'=> $request-> email,
