@@ -12,20 +12,30 @@
       <th scope="col">id</th>
       <th scope="col">name</th>
       <th scope="col">email</th>
-      <th scope="col">RoomNo</th>
+      <th scope="col">room</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
+  @foreach($list as $data )
     
     <tr>
 
-    <td scope="row">1</td>
-      <td>Pappu</td>
-      <td>pappu@gmail.com</td>
-      <td>402</td>
+    <td>{{$data->id}}</td>
+      <td>{{$data->name}}</td>
+      <td>{{$data->email}}</td>
+      <td>{{$data->room}}</td>
+      <td>
+        <a href="" class="btn btn-warning">Edit</a>
+        <a href="" class="btn btn-danger">Delete</a>
+      </td>
+
     </tr>
+    @endforeach
+    
     
   </tbody>
 </table>
+{{$list->links()}}
 
 @endsection

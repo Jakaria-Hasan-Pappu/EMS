@@ -10,7 +10,7 @@ class DepartmentController extends Controller
 {
     public function department(){
       
-        $list=Department::all();
+        $list=Department::paginate(4);
         // dd($list);
         return view('backend.pages.department',compact('list'));
         

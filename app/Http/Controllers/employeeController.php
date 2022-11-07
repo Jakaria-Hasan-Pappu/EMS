@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class employeeController extends Controller
 {
    public function employee(){
-       $list=Employee::all();
+       $list=Employee::paginate(5);
     //    dd($list);
     return view('backend.pages.employee',compact('list'));
     

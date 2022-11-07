@@ -9,7 +9,7 @@ class DesignationController extends Controller
 {
     public function designation(){
 
-        $list=Designation::all();
+        $list=Designation::paginate(5);
         //  dd($list);
         return view('backend.pages.designation',compact('list'));
         
