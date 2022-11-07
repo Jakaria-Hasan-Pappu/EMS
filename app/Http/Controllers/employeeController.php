@@ -22,10 +22,16 @@ class employeeController extends Controller
    public function emc(Request  $request)
     {
         // dd($request->all());
+        $request->validate([
+            'name'=>'required|unique:employees,name',
+            'email'=>'required',
+            'password'=>'required',
+    ]);  
         Employee::create([
-            'name'=> $request-> name,
-            'email'=> $request-> email,
-            'password'=> $request-> password,
+            //database column name => input field name
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'password'=>$request->password
             
         ]);
         return redirect()->back();
