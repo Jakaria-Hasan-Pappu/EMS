@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Employee;
+use App\Models\Department;
 use Illuminate\Http\Request;
 
 class employeeController extends Controller
@@ -15,7 +16,8 @@ class employeeController extends Controller
 
    }
    public function employeecreate(){
-        return view('backend.pages.Employeecreate');
+    $departments=Department::all();
+        return view('backend.pages.Employeecreate',compact('departments'));
 
    }
 
@@ -31,9 +33,10 @@ class employeeController extends Controller
             //database column name => input field name
             'name'=>$request->name,
             'email'=>$request->email,
-            'password'=>$request->password
+            'password'=>$request->password,
+            'department_id'=>$request->department_id
             
         ]);
-        return redirect()->back();
+        return redirect()->back()->with('message','Employee Created Successful.');
     }
 }
