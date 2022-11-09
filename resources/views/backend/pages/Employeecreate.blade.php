@@ -16,7 +16,7 @@
 @endif
 
   </div>
-<form action="{{route('emc.create')}}" method="post">
+<form action="{{route('emc.create')}}" method="post" enctype="multipart/form-data">
 
 @if($errors->any())
             @foreach($errors->all() as $message)
@@ -44,6 +44,13 @@
     <input type="password" class="form-control" id="exampleInputPassword1"name="password" placeholder="Password">
   </div>
 
+  
+            
+  <div class="form-group">
+    <label for="image">Image</label>
+    <input type="file" name="image" >
+  </div>
+
   <div class="form-group">
                 <label for="">Select Department</label>
                 <select name="department_id" id="" class="form-control">
@@ -52,6 +59,7 @@
                     @endforeach
                 </select>
             </div>
+  
 
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>

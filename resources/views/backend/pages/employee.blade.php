@@ -13,8 +13,10 @@
       <th scope="col">name</th>
       <th scope="col">email</th>
       <th scope="col">password</th>
+      <th scope="col">image</th>
       <th scope="col">Department</th>
       <th scope="col">Action</th>
+      
     </tr>
   </thead>
   <tbody>
@@ -26,7 +28,9 @@
       <td>{{$data->name}}</td>
       <td>{{$data->email}}</td>
       <td>{{$data->password}}</td>
-      <td>{{$data->department->id}}</td>
+      <td>{{$data->image}}</td>
+      <td>{{$data->department->name}}</td>
+      
       <td>
         <a href="" class="btn btn-warning">Edit</a>
         <a href="" class="btn btn-danger">Delete</a>
