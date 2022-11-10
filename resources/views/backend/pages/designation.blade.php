@@ -9,9 +9,11 @@
 <table class="table">
   <thead>
     <tr>
+    <th scope="col">id</th>
       <th scope="col">department_name</th>
       <th scope="col">designation</th>
       <th scope="col">status</th>
+      <th scope="col">Department</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -19,9 +21,11 @@
   @foreach($list as $data )
     
     <tr>
+      <td>{{$data->id}}</td>
       <td>{{$data->department_name}}</td>
       <td>{{$data->designation}}</td>
       <td>{{$data->status}}</td>
+      <td>{{$data->department->id}}</td>
       <td>
         <a href="" class="btn btn-warning">Edit</a>
         <a href="" class="btn btn-danger">Delete</a>

@@ -18,10 +18,22 @@
    
   </div>
   <div class="form-group">
-    <label for="exampleInputstatus">Status</label>
-    <input type="text" class="form-control" idexampleInputstatus name="status" placeholder="Status">
+            <label for="">Select Status</label>
+            <select name="status" id="" class="form-control">
+                <option value="active">Active</option>
+                <option value="inactive">Inactive</option>
+            </select>
+        </div>
    
   </div>
+  <div class="form-group">
+                <label for="">Select Department</label>
+                <select name="department_id" id="" class="form-control">
+                    @foreach($departments  as $data)
+                    <option value="{{$data->id}}">{{$data->name}}</option>
+                    @endforeach
+                </select>
+            </div>
 
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>

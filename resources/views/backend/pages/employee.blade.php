@@ -28,7 +28,11 @@
       <td>{{$data->name}}</td>
       <td>{{$data->email}}</td>
       <td>{{$data->password}}</td>
-      <td>{{$data->image}}</td>
+      <td>
+                
+
+                <img width="100px" style="border-radius: 10px" src="{{url('/uploads/'.$data->image)}}" alt="Employee_image">
+            </td>
       <td>{{$data->department->name}}</td>
       
       <td>

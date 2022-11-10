@@ -28,21 +28,18 @@ class employeeController extends Controller
             'name'=>'required|unique:employees,name',
             'email'=>'required',
             'password'=>'required',
+            'image'=>'required'
             
            
     ]); 
-    $filename=null;
-         
-        // check image exist in the request
-        if($request->file('image')){
-            // need to store image file in a variable
-            $file= $request->file('image');
-            // generate filename
-            $filename= date('YmdHi').$file->getClientOriginalName();
-            // store into project directory
-            $file-> storeAS('images', $filename);
-            $data['image']= $filename;
+    $fileName=null;
+        if($request->hasFile('image'))
+        {
+            // generate name
+            $fileName=date('Ymdhmi').'.'.$request->file('image')->getClientOriginalExtension();
+            $request->file('image')->storeAs('/uploads',$fileName);
         }
+
     
     
         Employee::create([
@@ -50,7 +47,7 @@ class employeeController extends Controller
             'name'=>$request->name,
             'email'=>$request->email,
             'password'=>$request->password,
-            'image'=>$request->image,
+            'image' => $fileName,
             'department_id'=>$request->department_id
             
         ]);

@@ -15,9 +15,11 @@ return new class extends Migration
     {
         Schema::create('designations', function (Blueprint $table) {
             $table->id();
+           
+            $table->foreignId('department_id')->constrained('departments');
             $table->string('department_name');
             $table->string('designation');
-             $table->string('status');
+             $table->string('status')->default('active');
             $table->timestamps();
         });
     }

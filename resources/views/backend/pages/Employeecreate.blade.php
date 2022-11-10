@@ -47,9 +47,9 @@
   
             
   <div class="form-group">
-    <label for="image">Image</label>
-    <input type="file" name="image" >
-  </div>
+            <label for="image">Upload Image</label>
+            <input name="image" type="file" class="form-control" id="image">
+        </div>
 
   <div class="form-group">
                 <label for="">Select Department</label>
