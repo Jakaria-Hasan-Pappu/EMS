@@ -18,12 +18,6 @@
   </div>
 <form action="{{route('emc.create')}}" method="post" enctype="multipart/form-data">
 
-@if($errors->any())
-            @foreach($errors->all() as $message)
-                <p class="alert alert-danger">{{$message}}</p>
-            @endforeach
-        @endif
-
             @if(session()->has('message'))
                 <p class="alert alert-success">{{session()->get('message')}}</p>
             @endif

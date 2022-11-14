@@ -4,17 +4,12 @@
 
 
 <h1>Add Designation</h1>
-<form action="{{route('dsg.form')}}" target="_blank" method="post">
+<form action="{{route('dsg.form')}}" method="post">
   @csrf
   
   <div class="form-group">
-    <label for="Department Name"> Department Name</label>
-    <input type="text" class="form-control" id="Department Name"name="department_name"  placeholder="Enter name">
-   
-  </div>
-  <div class="form-group">
     <label for="Designation">Designation</label>
-    <input type="text" class="form-control" id="Designation"name="designation" aria-describedby="emailHelp" placeholder="Enter designation">
+    <input type="text" class="form-control" id="Designation"name="designation" aria-describedby="emailHelp" placeholder="Enter designation" required>
    
   </div>
   <div class="form-group">

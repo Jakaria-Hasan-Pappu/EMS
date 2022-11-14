@@ -43,7 +43,7 @@
 
 @include('backend.fixed.header')
 
-  @include('backend.fixed.sidebar')
+@include('backend.fixed.sidebar')
 
   <main id="main" class="main">
 

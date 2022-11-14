@@ -27,7 +27,6 @@ public function dsg(Request $request)
         //dd($request->all());
         Designation::create([
             'department_id'=> $request->department_id,
-            'department_name'=> $request->department_name,
             'designation'=> $request->designation,
             'status'=>$request->status,
             

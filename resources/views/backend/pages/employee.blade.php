@@ -20,6 +20,8 @@
     </tr>
   </thead>
   <tbody>
+    
+  
     @foreach($list as $data )
     
     <tr>
@@ -45,7 +47,7 @@
     
   </tbody>
 </table>
-{{$list->links()}}
+
 
 
 @endsection
