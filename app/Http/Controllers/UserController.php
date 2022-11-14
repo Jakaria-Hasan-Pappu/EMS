@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -34,4 +35,20 @@ public function logout()
     Auth::logout();
     return redirect()->back()->with('message','Logout successful.');
 }
+public function register()
+    {
+        return view('backend.pages.register');
+    }
+
+public function registerstore(Request $request)
+    {
+        // dd($request->all());
+        User::create([
+            'name'=> $request->name,
+            'email'=> $request->email,
+            'password'=> bcrypt($request->password)
+        ]);
+        return redirect()->back();
+    }
+
 }
