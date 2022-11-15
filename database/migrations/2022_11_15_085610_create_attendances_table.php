@@ -13,12 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('leaves', function (Blueprint $table) {
+        Schema::create('attendances', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('quantity');
-             $table->string('status');
-             $table->string('designation');
+            $table->date('attendance_day');
+            $table->time('intime');
+            $table->time('outtime');
+            
+            $table->foreignId('employee_id')->constrained('employees');
+            
+
             $table->timestamps();
         });
     }
@@ -30,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('leavesns');
+        Schema::dropIfExists('attendances');
     }
 };

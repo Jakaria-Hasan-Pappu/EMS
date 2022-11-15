@@ -8,19 +8,28 @@ use App\Models\leave;
 class LeaveController extends Controller
 {
     public function leave(){
+        $list=leave::all();
 
-        return view('backend.pages.leave');
+        return view('backend.pages.leave',compact('list'));
     
 }
+
+public function leavecreate(){
+    
+        return view('backend.pages.leavecreate');
+
+   }
 
 
     public function leve(Request  $request)
     {
-        //dd($request->all());
+        // dd($request->all());
        leave::create([
-            'date'=> $request-> date,
-            'cause'=> $request-> cause,
-            'duration'=> $request-> duration,
+            'id'=> $request->id,
+            'name'=> $request->name,
+            'quantity'=> $request->quantity,
+            'status'=>$request->status,
+            'designation'=> $request->designation,
             
         ]);
         return redirect()->back();

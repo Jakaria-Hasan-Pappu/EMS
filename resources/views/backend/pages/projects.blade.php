@@ -2,28 +2,50 @@
 
 @section('contents')
 
+<h1>Project list</h1>
+<a href="{{route('employee.create')}}" class="btn btn-primary">Create employee</a>
 
-<h1>PHP LARAVEL</h1>
 
-<form action="/emc" target="_blank" method="post">
-  @csrf
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">name</th>
+      <th scope="col">email</th>
+      <th scope="col">password</th>
+      <th scope="col">image</th>
+      <th scope="col">employee</th>
+      <th scope="col">client</th>
+      <th scope="col">Action</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
   
-  <div class="form-group">
-    <label for="exampleInputEmail1">Name</label>
-    <input type="text" class="form-control" id="exampleInputEmail1"name="name"  placeholder="Enter name">
-   
-  </div>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1"name="email" aria-describedby="emailHelp" placeholder="Enter email">
-   
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1"name="password" placeholder="Password">
-  </div>
+    @foreach($list as $data )
+    
+    <tr>
 
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+    <td>{{$data->id}}</td>
+      <td>{{$data->name}}</td>
+      <td>{{$data->description}}</td>
+      <td>{{$data->deadline}}</td>
+     
+      <td>{{$data->employee->id}}</td>
+      <td>{{$data->client->id}}</td>
+      
+      <td>
+        <a href="" class="btn btn-warning">Edit</a>
+        <a href="" class="btn btn-danger">Delete</a>
+      </td>
 
-@endsection()
+    </tr>
+    @endforeach
+    
+  </tbody>
+</table>
+
+
+
+@endsection

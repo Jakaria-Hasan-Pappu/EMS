@@ -64,6 +64,13 @@
     </a>
   </li>
 
+  <li class="nav-item">
+    <a class="nav-link " href="{{url('/client')}}">
+      <i class="bi bi-grid"></i>
+      <span>Client</span>
+    </a>
+  </li>
+
 </ul>
 
 

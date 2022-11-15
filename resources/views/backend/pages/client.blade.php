@@ -2,8 +2,8 @@
 
 @section('contents')
 
-<h1>Leave list</h1>
-<a href="{{route('leave.create')}}" class="btn btn-primary">Create leave</a>
+<h1>Client list</h1>
+<a href="{{route('clientcreate')}}" class="btn btn-primary">Create Client</a>
 
 
 <table class="table">
@@ -11,11 +11,11 @@
     <tr>
       <th scope="col">id</th>
       <th scope="col">name</th>
-      <th scope="col">quantity</th>
-      <th scope="col">status</th>
-      <th scope="col">designation</th>
-      <th scope="col">Action</th>
+      <th scope="col">phone</th>
+      <th scope="col">address</th>
+      <th scope="col">company</th>
       
+     
     </tr>
   </thead>
   <tbody>
@@ -25,11 +25,13 @@
     
     <tr>
 
-    <td>{{$data->id}}</td>
+    
+      <td>{{$data->id}}</td>
       <td>{{$data->name}}</td>
-      <td>{{$data->quantity}}</td>
-      <td>{{$data->status}}</td>
-      <td>{{$data->designation}</td>
+      <td>{{$data->phone}}</td>
+      <td>{{$data->address}}</td>
+      <td>{{$data->company}}</td>
+    
      
       
       
