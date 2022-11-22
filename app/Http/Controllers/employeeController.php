@@ -12,7 +12,7 @@ class employeeController extends Controller
        $list=Employee::all();
     //    dd($list);
     return view('backend.pages.employee',compact('list'));
-    
+
 
    }
    public function employeecreate(){
@@ -27,11 +27,10 @@ class employeeController extends Controller
         $request->validate([
             'name'=>'required|unique:employees,name',
             'email'=>'required',
-            'password'=>'required',
             'image'=>'required'
-            
-           
-    ]); 
+
+
+    ]);
     $fileName=null;
         if($request->hasFile('image'))
         {
@@ -40,17 +39,78 @@ class employeeController extends Controller
             $request->file('image')->storeAs('/uploads',$fileName);
         }
 
-    
-    
+
+
         Employee::create([
             //database column name => input field name
             'name'=>$request->name,
             'email'=>$request->email,
-            'password'=>$request->password,
             'image' => $fileName,
             'department_id'=>$request->department_id
-            
+
         ]);
         return redirect()->back()->with('message','Employee Created Successful.');
+    }
+
+    public function deleteEmployee(int $employee_id)
+    {
+           $test=Employee::find($employee_id);
+             if($test)
+             {
+                 $test->delete();
+                 return redirect()->back()->with('message','employee deleted successfully.');
+             }else{
+                 return redirect()->back()->with('error','employee not found.');
+             }
+//        Employee::findOrFail($product_id)->delete();
+//        return redirect()->back()->with('message','product deleted successfully.');
+    }
+    public function viewEmployee($employee_id)
+    {
+      $employee=Employee::find($employee_id);
+      return view('backend.pages.view',compact('employee'));
+    }
+
+    public function edit($employee_id)
+    {
+        $employee=Employee::find($employee_id);
+        $departments=Department::all();
+        return view('backend.pages.edit',compact('employee','departments'));
+    }
+
+    public function update(Request $request,$employee_id)
+    {
+
+//        dd($request->all());
+//        Employee::find($employee_id)->update([
+//            'department_id' => $request->category_id,
+//            'stock' => $request->product_stock,
+//            'price' => $request->product_price,
+//            'status' => $request->status,
+//            'description' => $request->description
+//        ]);
+
+        $employee=Employee::find($employee_id);
+        $fileName=$employee->image;
+
+        if($request->hasFile('image'))
+        {
+            // generate name
+            $fileName=date('Ymdhmi').'.'.$request->file('image')->getClientOriginalExtension();
+            $request->file('image')->storeAs('/uploads',$fileName);
+        }
+
+
+        $employee->update([
+            //database column name => input field name
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'image' => $fileName,
+            'department_id'=>$request->department_id
+
+        ]);
+
+        return redirect()->route('employee')->with('message','Update success.');
+
     }
 }

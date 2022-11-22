@@ -13,6 +13,7 @@
       <th scope="col">name</th>
       <th scope="col">email</th>
       <th scope="col">room</th>
+      
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -25,6 +26,8 @@
       <td>{{$data->name}}</td>
       <td>{{$data->email}}</td>
       <td>{{$data->room}}</td>
+      
+      
       <td>
         <a href="" class="btn btn-warning">Edit</a>
         <a href="" class="btn btn-danger">Delete</a>

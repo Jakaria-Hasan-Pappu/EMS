@@ -2,7 +2,7 @@
 
 @section('contents')
 
-<h1>Leave list</h1>
+<h1>Attendance list</h1>
 <a href="{{route('attendancecreate')}}" class="btn btn-primary">Create Attendance</a>
 
 

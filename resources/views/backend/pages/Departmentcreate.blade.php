@@ -24,23 +24,20 @@
   
   <div class="form-group">
     <label for="name">Name</label>
-    <input type="text" class="form-control" id="name"name="name"  placeholder="Enter name">
+    <input type="text" autocomplete="off" class="form-control" id="name"name="name"  placeholder="Enter name">
    
   </div>
   <div class="form-group">
     <label for="email">Email address</label>
-    <input type="email" class="form-control" id="email"name="email" aria-describedby="emailHelp" placeholder="Enter email">
+    <input type="email" autocomplete="off" class="form-control" id="email"name="email" aria-describedby="emailHelp" placeholder="Enter email">
    
   </div>
   <div class="form-group">
     <label for="room">RoomNo</label>
-    <input type="room" class="form-control" id="room"name="room" placeholder="Password">
+    <input type="room" autocomplete="off" class="form-control" id="room"name="room" placeholder="roomno">
   </div>
 
-  <div class="form-group">
-            <label for="image">Upload Image</label>
-            <input name="image" type="file" class="form-control" id="image">
-        </div>
+  
 
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>

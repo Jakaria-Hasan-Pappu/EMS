@@ -24,10 +24,6 @@ use App\Http\Controllers\ClientController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/',function(){
-    return view('backend.welcome');
-});
-
 
 
 
@@ -37,24 +33,35 @@ Route::get('/',function(){
 
 Route::get('/login',[UserController::class,'login'])->name('login');
 Route::post('/do-login',[UserController::class,'doLogin'])->name('do.login');
-Route::get('/logout',[UserController::class,'logout'])->name('logout');
+
 Route::get('/register',[UserController::class,'register'])->name('register');
 Route::post('/registerstore',[UserController::class,'registerstore'])->name('registerstore');
 
- 
- 
- 
+
+
+
 
 
 
 Route::group(["middleware"=>"auth"],function(){
+
+    Route::get('/',function(){
+        return view('backend.welcome');
+    })->name('admin');
+
+
+    Route::get('/logout',[UserController::class,'logout'])->name('logout');
 
     Route::get('/dashboards',[DashboardController::class,'dashboards'])->name('dashboard');
 
     Route::get('/employee',[employeeController::class,'employee'])->name('employee');
     Route::get('/employeecreate',[employeeController::class,'employeecreate'])->name('employee.create');
     Route::post('/emc',[employeeController::class,'emc'])->name('emc.create');
-   
+    Route::get('/employee/delete/{employee_id}',[employeeController::class,'deleteEmployee'])->name('employee.delete');
+    Route::get('/employee/view/{employee_id}',[employeeController::class,'viewEmployee'])->name('employee.view');
+    Route::get('/employee/edit/{employee_id}',[employeeController::class,'edit'])->name('employee.edit');
+    Route::put('/employee/update/{employee_id}',[employeeController::class,'update'])->name('employee.update');
+
 
     Route::get('/attendance',[AttendanceController::class,'attendance'])->name('attendance');
     Route::get('/attendancecreate',[AttendanceController::class,'attendancecreate'])->name('attendancecreate');
@@ -62,7 +69,7 @@ Route::group(["middleware"=>"auth"],function(){
 
     Route::get('/leave',[leaveController::class,'leave'])->name('leave');
     Route::get('/leavecreate',[leaveController::class,'leavecreate'])->name('leave.create');
-    Route::post('/leve',[leaveController::class,'leve'])->name('leve');
+    Route::post('/leve-store',[leaveController::class,'leve'])->name('leve.store');
 
     Route::get('/projects',[ProjectsController::class,'projects'])->name('projects');
     Route::get('/projectscreate',[ProjectsController::class,'projectscreate'])->name('projectscreate');
@@ -75,7 +82,7 @@ Route::group(["middleware"=>"auth"],function(){
     Route::get('/department',[DepartmentController::class,'department'])->name('department');
     Route::get('/departmentcreate',[DepartmentController::class,'departmentcreate'])->name('department.create');
     Route::post('/department/form',[DepartmentController::class,'dpt'])->name('department.form');
-   
+
     Route::get('/designation',[DesignationController::class,'designation'])->name('designation');
     Route::get('/designationcreate',[DesignationController::class,'designationcreate'])->name('designation.create');
     Route::post('/dsg/form',[DesignationController::class,'dsg'])->name('dsg.form');
@@ -84,6 +91,7 @@ Route::group(["middleware"=>"auth"],function(){
     Route::get('/clientcreate',[ClientController::class,'clientcreate'])->name('clientcreate');
     Route::post('/clientstore',[ClientController::class,'clientstore'])->name('clientstore');
 
-   
+
+
 });
 

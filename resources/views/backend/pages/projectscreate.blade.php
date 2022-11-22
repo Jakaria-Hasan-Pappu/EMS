@@ -4,20 +4,20 @@
 
 
 <h1>Add Project</h1>
-<form action="/projectsstore" method="post">
+<form action="{{route('projectsstore')}}" method="post">
   @csrf
-  
-  
+
+
   <div class="form-group">
     <label for="id">id</label>
     <input type="text" class="form-control" id="id"name="id" aria-describedby="emailHelp" placeholder="Enter id">
-   
+
   </div>
 
   <div class="form-group">
     <label for="name">Name</label>
     <input type="text" class="form-control" id="name"name="name"  placeholder="Enter name">
-   
+
   <div class="form-group">
     <label for="description">Description</label>
     <input type="text" class="form-control" id="quantity"name="description" placeholder="text">
@@ -47,9 +47,9 @@
 </form>
 
 @endsection
-  
-            
-  
 
-  
-  
+
+
+
+
+

@@ -12,39 +12,39 @@
       <th scope="col">id</th>
       <th scope="col">name</th>
       <th scope="col">email</th>
-      <th scope="col">password</th>
       <th scope="col">image</th>
       <th scope="col">Department</th>
       <th scope="col">Action</th>
-      
+
     </tr>
   </thead>
   <tbody>
-    
-  
+
+
     @foreach($list as $data )
-    
+
     <tr>
 
     <td>{{$data->id}}</td>
       <td>{{$data->name}}</td>
       <td>{{$data->email}}</td>
-      <td>{{$data->password}}</td>
+
       <td>
-                
+
 
                 <img width="100px" style="border-radius: 10px" src="{{url('/uploads/'.$data->image)}}" alt="Employee_image">
             </td>
       <td>{{$data->department->name}}</td>
-      
+
       <td>
-        <a href="" class="btn btn-warning">Edit</a>
-        <a href="" class="btn btn-danger">Delete</a>
+        <a href="{{route('employee.edit',$data->id)}}" class="btn btn-warning">Edit</a>
+        <a href="{{route('employee.delete',$data->id)}}" class="btn btn-danger">Delete</a>
+        <a href="{{route('employee.view',$data->id)}}" class="btn btn-primary">View</a>
       </td>
 
     </tr>
     @endforeach
-    
+
   </tbody>
 </table>
 

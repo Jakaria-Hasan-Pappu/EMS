@@ -2,21 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\leave;
+use App\Models\Employee;
+use Illuminate\Http\Request;
 
 class LeaveController extends Controller
 {
     public function leave(){
-        $list=leave::all();
+        $list=leave::join('employees','employees.id','leaves.employee_id')->select('leaves.*','employees.id')->get();
+        // dd($list);
 
         return view('backend.pages.leave',compact('list'));
-    
+
 }
 
 public function leavecreate(){
-    
-        return view('backend.pages.leavecreate');
+
+    $employee=Employee::all();
+
+        return view('backend.pages.leavecreate',compact('employee'));
 
    }
 
@@ -25,13 +29,12 @@ public function leavecreate(){
     {
         // dd($request->all());
        leave::create([
-            'id'=> $request->id,
-            'name'=> $request->name,
-            'quantity'=> $request->quantity,
-            'status'=>$request->status,
-            'designation'=> $request->designation,
-            
-        ]);
+            'employee_id'=> $request->employee_id,
+            'leavereason'=> $request->leavereason,
+            'fromdate'=> $request->fromdate,
+            'todate'=>$request->todate,
+       ]);
+
         return redirect()->back();
     }
 

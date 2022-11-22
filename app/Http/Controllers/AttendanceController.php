@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Employee;
 use App\Models\attendance;
 use Illuminate\Http\Request;
 
@@ -11,12 +12,13 @@ class AttendanceController extends Controller
         $list=attendance::all();
 
         return view('backend.pages.attendance',compact('list'));
-    
+
 }
 
 public function attendancecreate(){
-    
-        return view('backend.pages.attendancecreate');
+     $employees= Employee::all();
+
+        return view('backend.pages.attendancecreate',compact('employees'));
 
    }
 
@@ -30,9 +32,9 @@ public function attendancecreate(){
             'intime'=> $request->intime,
             'outtime'=> $request->outtime,
             'employee_id'=> $request->employee_id,
-            
-            
-            
+
+
+
         ]);
         return redirect()->back();
     }

@@ -9,30 +9,29 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">id</th>
-      <th scope="col">name</th>
-      <th scope="col">quantity</th>
-      <th scope="col">status</th>
-      <th scope="col">designation</th>
+      <th scope="col">employee_id</th>
+      <th scope="col">Leavereason</th>
+      <th scope="col">Fromdate</th>
+      <th scope="col">Todate</th>
       <th scope="col">Action</th>
-      
+
     </tr>
   </thead>
   <tbody>
-    
-  
+
+
     @foreach($list as $data )
-    
+
     <tr>
 
     <td>{{$data->id}}</td>
-      <td>{{$data->name}}</td>
-      <td>{{$data->quantity}}</td>
-      <td>{{$data->status}}</td>
-      <td>{{$data->designation}</td>
-     
-      
-      
+      <td>{{$data->leavereason}}</td>
+      <td>{{$data->fromdate}}</td>
+      <td>{{$data->todate}}</td>
+
+
+
+
       <td>
         <a href="" class="btn btn-warning">Edit</a>
         <a href="" class="btn btn-danger">Delete</a>
@@ -40,7 +39,7 @@
 
     </tr>
     @endforeach
-    
+
   </tbody>
 </table>
 

@@ -23,7 +23,7 @@ public function doLogin(Request $request)
 
     if(Auth::attempt($credentials))
     {
-        return redirect()->route('dashboard');
+        return redirect()->route('admin');
     }
     return redirect()->back()->with('message','invalid credentials');
 
@@ -32,6 +32,7 @@ public function doLogin(Request $request)
 
 public function logout()
 {
+    
     Auth::logout();
     return redirect()->back()->with('message','Logout successful.');
 }
