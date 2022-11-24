@@ -9,7 +9,8 @@ use Illuminate\Http\Request;
 class LeaveController extends Controller
 {
     public function leave(){
-        $list=leave::join('employees','employees.id','leaves.employee_id')->select('leaves.*','employees.id')->get();
+        $list=leave::get();
+
         // dd($list);
 
         return view('backend.pages.leave',compact('list'));

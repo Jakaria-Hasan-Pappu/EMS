@@ -12,6 +12,7 @@
       <th scope="col">id</th>
       <th scope="col">name</th>
       <th scope="col">email</th>
+
       <th scope="col">image</th>
       <th scope="col">Department</th>
       <th scope="col">Action</th>
@@ -21,13 +22,14 @@
   <tbody>
 
 
-    @foreach($list as $data )
+    @foreach($list as $key=>$data )
 
     <tr>
 
-    <td>{{$data->id}}</td>
+    <td>{{$key+1}}</td>
       <td>{{$data->name}}</td>
       <td>{{$data->email}}</td>
+      
 
       <td>
 

@@ -21,23 +21,23 @@
             <p class="alert alert-success">{{session()->get('message')}}</p>
         @endif
   @csrf
-  
+
   <div class="form-group">
     <label for="name">Name</label>
-    <input type="text" autocomplete="off" class="form-control" id="name"name="name"  placeholder="Enter name">
-   
+    <input type="text"  class="form-control" id="name"name="name"  placeholder="Enter name">
+
   </div>
   <div class="form-group">
     <label for="email">Email address</label>
-    <input type="email" autocomplete="off" class="form-control" id="email"name="email" aria-describedby="emailHelp" placeholder="Enter email">
-   
+    <input type="email"  class="form-control" id="email"name="email" aria-describedby="emailHelp" placeholder="Enter email">
+
   </div>
   <div class="form-group">
     <label for="room">RoomNo</label>
-    <input type="room" autocomplete="off" class="form-control" id="room"name="room" placeholder="roomno">
+    <input type="room"  class="form-control" id="room"name="room" placeholder="roomno">
   </div>
 
-  
+
 
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>

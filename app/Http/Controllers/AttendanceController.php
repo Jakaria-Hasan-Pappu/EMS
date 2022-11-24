@@ -25,7 +25,7 @@ public function attendancecreate(){
 
     public function attendancestore(Request  $request)
     {
-         dd($request->all());
+        //  dd($request->all());
          attendance::create([
             'id'=> $request->id,
             'date'=> $request->date,

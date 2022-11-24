@@ -22,20 +22,26 @@
                 <p class="alert alert-success">{{session()->get('message')}}</p>
             @endif
   @csrf
-  
+
   <div class="form-group">
     <label for="exampleInputEmail1">Name</label>
-    <input type="text" autocomplete="off" class="form-control" id="exampleInputEmail1"name="name"  placeholder="Enter name" required>
-   
+    <input type="text" class="form-control" id="exampleInputEmail1"name="name"  placeholder="Enter name" required>
+
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
-    <input type="email" autocomplete="off" class="form-control" id="exampleInputEmail1"name="email" aria-describedby="emailHelp" placeholder="Enter email">
-   
- 
+    <input type="email" class="form-control" id="exampleInputEmail1"name="email" aria-describedby="emailHelp" placeholder="Enter email">
+  </div>
 
-  
-            
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password"  class="form-control" id="password" name="password"  placeholder="Enter name" required>
+
+  </div>
+
+
+
+
   <div class="form-group">
             <label for="image">Upload Image</label>
             <input name="image" type="file" class="form-control" id="image">
@@ -49,7 +55,7 @@
                     @endforeach
                 </select>
             </div>
-  
+
 
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>

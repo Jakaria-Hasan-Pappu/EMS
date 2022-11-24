@@ -4,15 +4,11 @@
 
 
 <h1>Add Project</h1>
-<form action="{{route('projectsstore')}}" method="post">
+<form action="{{route('projectsstore')}}" method="post"  enctype="multipart/form-data">
   @csrf
 
 
-  <div class="form-group">
-    <label for="id">id</label>
-    <input type="text" class="form-control" id="id"name="id" aria-describedby="emailHelp" placeholder="Enter id">
 
-  </div>
 
   <div class="form-group">
     <label for="name">Name</label>
@@ -24,8 +20,14 @@
   </div>
   <div class="form-group">
     <label for="deadline">deadline</label>
-    <input type="text" class="form-control" id="status"name="deadline" placeholder="active">
+    <input type="date" class="form-control" id="status"name="deadline" placeholder="active">
+
   </div>
+
+  <div class="form-group">
+    <label for="image">Upload Image</label>
+    <input name="image" type="file" class="form-control" id="image">
+</div>
   <div class="form-group">
                 <label for="">Select Employee</label>
                 <select name="employee_id" id="" class="form-control">

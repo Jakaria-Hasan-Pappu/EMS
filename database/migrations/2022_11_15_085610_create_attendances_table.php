@@ -15,12 +15,12 @@ return new class extends Migration
     {
         Schema::create('attendances', function (Blueprint $table) {
             $table->id();
-            $table->date('attendance_day');
+            $table->date('date');
             $table->time('intime');
             $table->time('outtime');
-            
+
             $table->foreignId('employee_id')->constrained('employees');
-            
+
 
             $table->timestamps();
         });

@@ -15,10 +15,12 @@ return new class extends Migration
     {
         Schema::create('leaves', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('quantity');
-             $table->string('status');
-             $table->string('designation');
+            $table->string('leavereason');
+            $table->date('fromdate');
+             $table->date('todate');
+
+             $table->foreignId('employee_id')->constrained('employees');
+
             $table->timestamps();
         });
     }

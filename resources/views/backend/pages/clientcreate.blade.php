@@ -6,19 +6,19 @@
 <h1>Add Client</h1>
 <form action="{{route('clientstore')}}" method="post">
   @csrf
-  
-  
+
+
   <div class="form-group">
     <label for="id">id</label>
     <input type="text" class="form-control" id="id"name="id" aria-describedby="emailHelp" placeholder="Enter id">
-   
+
   </div>
 
   <div class="form-group">
-    <label for="name">name/label>
+    <label for="name">name</label>
     <input type="text" class="form-control" id="name"name="name"  placeholder="Enter name">
-   
-  
+
+
 
   <div class="form-group">
     <label for="phone">phone</label>
@@ -36,7 +36,7 @@
   </div>
 
 
-  
+
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 

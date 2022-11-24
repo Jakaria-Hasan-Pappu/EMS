@@ -31,16 +31,26 @@ class ProjectsController extends Controller
 
     public function projectsstore(Request  $request)
     {
-        // dd($request->all());
+        //  dd($request->all());
+
+        $fileName=null;
+        if($request->hasFile('image'))
+        {
+            // generate name
+            $fileName=date('Ymdhmi').'.'.$request->file('image')->getClientOriginalExtension();
+            $request->file('image')->storeAs('/uploads',$fileName);
+        }
        project::create([
             'id'=> $request->id,
             'name'=> $request->name,
-            'description'=> $request->quantity,
-            'deadline'=>$request->status,
+            'description'=> $request->description,
+            'deadline'=>$request->deadline,
+            'image' => $fileName,
             'employee_id'=>$request->employee_id,
             'client_id'=>$request->client_id
 
         ]);
+
         return redirect()->back();
     }
 

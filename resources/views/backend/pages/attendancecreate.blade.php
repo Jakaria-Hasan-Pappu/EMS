@@ -6,28 +6,24 @@
 <h1>Add Attendance</h1>
 <form action="{{route('attendancestore')}}" method="post">
   @csrf
-  
-  
-  <div class="form-group">
-    <label for="id">id</label>
-    <input type="text" class="form-control" id="id"name="id" aria-describedby="emailHelp" placeholder="Enter id">
-   
-  </div>
+
+
+
 
   <div class="form-group">
     <label for="date">Date</label>
-    <input type="text" class="form-control" id="name"name="date"  placeholder="Enter name">
-   
-  
+    <input type="date" class="form-control" id="name"name="date"  placeholder="Enter name">
+
+
 
   <div class="form-group">
     <label for="intime">intime</label>
-    <input type="text" class="form-control" id="status"name="intime" placeholder="active">
+    <input type="time" class="form-control" id="status"name="intime" placeholder="active">
   </div>
 
   <div class="form-group">
     <label for="outtime">outtime</label>
-    <input type="text" class="form-control" id="status"name="outtime" placeholder="active">
+    <input type="time" class="form-control" id="status"name="outtime" placeholder="active">
   </div>
 
   <div class="form-group">
@@ -40,7 +36,7 @@
             </div>
 
 
-  
+
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 

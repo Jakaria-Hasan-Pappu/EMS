@@ -9,10 +9,11 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">employee_id</th>
+        <th scope="col">id</th>
       <th scope="col">Leavereason</th>
       <th scope="col">Fromdate</th>
       <th scope="col">Todate</th>
+      <th scope="col">employee_id</th>
       <th scope="col">Action</th>
 
     </tr>
@@ -28,6 +29,7 @@
       <td>{{$data->leavereason}}</td>
       <td>{{$data->fromdate}}</td>
       <td>{{$data->todate}}</td>
+      <td>{{$data->employee->name}}</td>
 
 
 

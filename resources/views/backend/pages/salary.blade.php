@@ -13,26 +13,27 @@
       <th scope="col">amount</th>
       <th scope="col">month</th>
       <th scope="col">status</th>
-      <th scope="col">employee</th>
+      <th scope="col">employee_id</th>
       <th scope="col">Action</th>
-      
+
     </tr>
   </thead>
   <tbody>
-    
-  
+
+
     @foreach($list as $data )
-    
+
     <tr>
 
     <td>{{$data->id}}</td>
       <td>{{$data->amount}}</td>
       <td>{{$data->month}}</td>
       <td>{{$data->status}}</td>
-      <td>{{$data->employee}</td>
-     
-      
-      
+      <td>{{$data->employee->id}}</td>
+
+
+
+
       <td>
         <a href="" class="btn btn-warning">Edit</a>
         <a href="" class="btn btn-danger">Delete</a>
@@ -40,7 +41,7 @@
 
     </tr>
     @endforeach
-    
+
   </tbody>
 </table>
 

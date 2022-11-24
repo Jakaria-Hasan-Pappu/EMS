@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\salary;
+use App\Models\Employee;
 use Illuminate\Http\Request;
 
 class SalaryController extends Controller
@@ -16,16 +17,17 @@ class SalaryController extends Controller
 
     public function salarycreate(){
 
+        $employee=Employee::all();
 
 
-        return view('backend.pages.salarycreate');
+        return view('backend.pages.salarycreate',compact('employee'));
 
     }
 
     public function salaryform(Request  $request)
     {
         // dd($request->all());
-       salaries::create([
+       salary::create([
             'id'=> $request->id,
             'amount'=> $request->amount,
             'month'=> $request->month,

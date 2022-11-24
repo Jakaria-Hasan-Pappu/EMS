@@ -6,14 +6,6 @@
         @csrf
 
 
-        <div class="form-group">
-            <label for="employee_id">select employee</label>
-            <select class="form-control" name="employee_id" id="id">
-                @foreach ($employee as $value)
-
-                <option value="{{ $value->id }}">{{$value->name}} </option>
-
-                @endforeach
 
             </select>
 
@@ -31,6 +23,15 @@
             <div class="form-group">
                 <label for="todate">To Date</label>
                 <input type="date" class="form-control" id="designation"name="todate" placeholder="date">
+            </div>
+
+            <div class="form-group">
+                <label for="">Select Employee</label>
+                <select name="employee_id" id="" class="form-control">
+                    @foreach ($employee as $data)
+                        <option value="{{ $data->id }}">{{ $data->name }}</option>
+                    @endforeach
+                </select>
             </div>
 
 

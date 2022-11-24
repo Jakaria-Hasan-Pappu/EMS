@@ -46,7 +46,9 @@ class employeeController extends Controller
             'name'=>$request->name,
             'email'=>$request->email,
             'image' => $fileName,
+            'password'=>$request->password,
             'department_id'=>$request->department_id
+
 
         ]);
         return redirect()->back()->with('message','Employee Created Successful.');

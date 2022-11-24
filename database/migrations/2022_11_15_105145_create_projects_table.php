@@ -18,10 +18,10 @@ return new class extends Migration
             $table->string('name');
             $table->string('description');
             $table->string('deadline');
-            
+            $table->string('image');
             $table->foreignId('employee_id')->constrained('employees');
             $table->foreignId('client_id')->constrained('clients');
-            
+
 
             $table->timestamps();
         });

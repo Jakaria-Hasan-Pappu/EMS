@@ -9,10 +9,10 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">id</th>
+
       <th scope="col">name</th>
-      <th scope="col">email</th>
-      <th scope="col">password</th>
+      <th scope="col">description</th>
+      <th scope="col">deadline</th>
       <th scope="col">image</th>
       <th scope="col">employee</th>
       <th scope="col">client</th>
@@ -27,10 +27,15 @@
 
     <tr>
 
-    <td>{{$data->id}}</td>
+
       <td>{{$data->name}}</td>
       <td>{{$data->description}}</td>
       <td>{{$data->deadline}}</td>
+      <td>
+
+
+        <img width="100px" style="border-radius: 10px" src="{{url('/uploads/'.$data->image)}}" alt="projects_image">
+    </td>
 
       <td>{{$data->employee->id}}</td>
       <td>{{$data->client->id}}</td>
