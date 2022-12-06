@@ -18,7 +18,7 @@
   </thead>
   <tbody>
   @foreach($list as $data )
-    
+
     <tr>
       <td>{{$data->id}}</td>
       <td>{{$data->designation}}</td>
@@ -27,12 +27,13 @@
       <td>
         <a href="" class="btn btn-warning">Edit</a>
         <a href="" class="btn btn-danger">Delete</a>
+        <a href="" class="btn btn-primary">View</a>
       </td>
 
     </tr>
     @endforeach
-    
-    
+
+
   </tbody>
 </table>
 {{$list->links()}}

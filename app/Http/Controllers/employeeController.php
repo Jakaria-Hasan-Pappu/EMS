@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\leave;
 use App\Models\Employee;
 use App\Models\Department;
 use Illuminate\Http\Request;
@@ -55,7 +56,9 @@ class employeeController extends Controller
     }
 
     public function deleteEmployee(int $employee_id)
+
     {
+
            $test=Employee::find($employee_id);
              if($test)
              {
@@ -70,7 +73,10 @@ class employeeController extends Controller
     public function viewEmployee($employee_id)
     {
       $employee=Employee::find($employee_id);
-      return view('backend.pages.view',compact('employee'));
+      $leave=leave::where('employee_id',$employee_id)->get();
+      
+
+      return view('backend.pages.view',compact('employee','leave'));
     }
 
     public function edit($employee_id)

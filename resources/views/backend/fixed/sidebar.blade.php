@@ -30,6 +30,20 @@
   </li>
 
   <li class="nav-item">
+    <a class="nav-link " href="{{url('/leavetype')}}">
+      <i class="bi bi-grid"></i>
+      <span>LeaveType</span>
+    </a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link " href="{{url('/employeeleavebalance')}}">
+      <i class="bi bi-grid"></i>
+      <span>EmployeeLeaveBalance</span>
+    </a>
+  </li>
+
+  <li class="nav-item">
     <a class="nav-link " href="{{url('/projects')}}">
       <i class="bi bi-grid"></i>
       <span>Projects</span>
@@ -43,12 +57,7 @@
     </a>
   </li>
 
-  <li class="nav-item">
-    <a class="nav-link " href="{{url('/employeecreate')}}">
-      <i class="bi bi-grid"></i>
-      <span>Employeecreate</span>
-    </a>
-  </li>
+
 
   <li class="nav-item">
     <a class="nav-link " href="{{url('/department')}}">

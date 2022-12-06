@@ -23,10 +23,10 @@
         <tbody>
 
 
-            @foreach ($list as $data)
+            @foreach ($list as $key=>$data)
                 <tr>
 
-                    <td>{{ $data->id }}</td>
+                    <td>{{$key+1}}</td>
 
                     <td>{{ $data->date }}</td>
                     <td>{{ $data->intime }}</td>
@@ -37,8 +37,9 @@
 
 
                     <td>
-                        <a href="" class="btn btn-warning">Edit</a>
-                        <a href="" class="btn btn-danger">Delete</a>
+                        <a href="{{route('attendance.edit',$data->id)}}" class="btn btn-warning">Edit</a>
+                        <a href="{{route('attendance.delete',$data->id)}}" class="btn btn-danger">Delete</a>
+                        <a href="{{route('attendance.view',$data->id)}}" class="btn btn-primary">View</a>
                     </td>
 
                 </tr>

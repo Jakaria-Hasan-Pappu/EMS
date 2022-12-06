@@ -38,4 +38,57 @@ class SalaryController extends Controller
         ]);
         return redirect()->back();
     }
+
+    public function deletesalary( $salary_id)
+    {
+           $test=salary::find($salary_id);
+             if($test)
+             {
+                 $test->delete();
+                 return redirect()->back();
+             }else{
+                 return redirect()->back()->with('error');
+             }
+
+}
+public function viewsalary($salary_id)
+{
+  $salary=salary::find($salary_id);
+  return view('backend.pages.salaryview',compact('salary'));
+}
+
+public function edit( $salary_id)
+    {
+
+        $salary=salary::find($salary_id);
+        $employees=Employee::all();
+
+        return view('backend.pages.salaryedit',compact('salary','employees'));
+    }
+
+    public function update(Request $request,$leave_id)
+    {
+
+    //    dd($request->all());
+    $salary=salary::find($leave_id);
+    // dd($leave);
+//
+
+$salary->update([
+
+
+    'amount'=> $request->amount,
+    'month'=> $request->month,
+    'status'=>$request->status,
+    'employee_id'=>$request->employee_id,
+
+]);
+return redirect()->back();
+
+}
+
+
+
+
+
 }

@@ -17,6 +17,11 @@ class leave extends Model
     {
         return $this->belongsTo(Employee::class);
     }
+
+    public function leavetype()
+    {
+        return $this->belongsTo(leavetype::class);
+    }
 }
 
 

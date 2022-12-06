@@ -17,10 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('leavereason');
             $table->date('fromdate');
-             $table->date('todate');
-
-             $table->foreignId('employee_id')->constrained('employees');
-
+            $table->date('todate');
+            $table->foreignId('employee_id')->constrained('employees');
+            $table->foreignId('leavetype_id');
             $table->timestamps();
         });
     }

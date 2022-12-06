@@ -13,7 +13,12 @@
 
         <div class="form-group">
             <label for="leavereason">Leave Reason</label>
-            <input type="text" class="form-control" id="name"name="leavereason" placeholder="Enter reason">
+            <select name="leavereason" id="">
+                <option value="annual">annual</option>
+                <option value="casual">casual</option>
+                <option value="marritial">marritial</option>
+                <option value="sick">sick</option>
+            </select>
 
             <div class="form-group">
                 <label for="fromdate">From Date</label>
@@ -29,6 +34,15 @@
                 <label for="">Select Employee</label>
                 <select name="employee_id" id="" class="form-control">
                     @foreach ($employee as $data)
+                        <option value="{{ $data->id }}">{{ $data->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="">Select Leavetype</label>
+                <select name="leavetype_id" id="" class="form-control">
+                    @foreach ($leave as $data)
                         <option value="{{ $data->id }}">{{ $data->name }}</option>
                     @endforeach
                 </select>

@@ -41,8 +41,9 @@
       <td>{{$data->client->id}}</td>
 
       <td>
-        <a href="" class="btn btn-warning">Edit</a>
-        <a href="" class="btn btn-danger">Delete</a>
+        <a href="{{route('projects.edit',$data->id)}}" class="btn btn-warning">Edit</a>
+        <a href="{{route('projects.delete',$data->id)}}" class="btn btn-danger">Delete</a>
+        <a href="{{route('projects.view',$data->id)}}" class="btn btn-primary">View</a>
       </td>
 
     </tr>
